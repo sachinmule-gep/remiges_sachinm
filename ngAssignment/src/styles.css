@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; } 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .errorMsg{
     width: 100%;
     margin-top: 0.25rem;
@@ -32,7 +35,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     margin: 0;
   }
   
@@ -73,3 +75,84 @@
   .calcButtons:active {
     background-color: #e0e0e0;
   }
+
+h3 {
+  font-size: 1.75rem !important;
+}
+
+/* chips */
+.example-chip-list {
+  width: 100%;
+}
+
+/* sidenav */
+.example-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+/* table */
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+/* expandable row */
+tr.example-detail-row {
+  height: 0 !important;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}

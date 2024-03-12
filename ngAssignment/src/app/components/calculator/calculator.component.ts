@@ -7,8 +7,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
-  results = this.el.nativeElement.querySelectorAll('#results');
-  input = this.el.nativeElement.querySelector('#input');
+  results:string = '';
   constructor(private el:ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
@@ -16,19 +15,19 @@ export class CalculatorComponent implements OnInit {
 
   appendCharacter(character: string): void { 
     console.log(character);
-    this.results.value += parseInt(character, 10);
+    this.results += character;
   }
 
   clearResult():void{
-    this.results.value = '';
-    console.log(typeof(this.results.value) );
+    this.results = '';
+    console.log(typeof(this.results) );
   };
   calculateResult(): void{
     try {
-      this.results.value = eval(this.results.value);
-      console.log(this.results.value);
+      this.results = eval(this.results);
+      console.log(this.results);
     } catch (error) {
-      this.results.value = 'Error';
+      this.results = 'Error';
     }
   };
 
