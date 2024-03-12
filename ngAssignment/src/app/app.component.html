@@ -1,0 +1,91 @@
+  
+  <div class="container text-center">
+    <div class="row  justify-content-center mb-5 ">
+      <!-- assignment 1 - change detection triigger for default/onpush strategy -->
+      <div class="col col-sm-6">
+            <div class="card">
+              <div class="card-header ">
+                  Change Detection - {{cdrStrategy}}
+              </div>
+              <div class="card-body ">
+                <app-change-detect [bulletin]="currentBulletin"></app-change-detect>
+              </div>
+              <div class="card-footer">
+                  <button (click)="changeDetectionDefault()" type="button" class="btn btn-primary mx-4">Update Default</button>
+                  <button (click)="changeDetectionOnPush()" type="button" class="btn btn-primary">Update Onpush</button>
+              </div>
+            </div>
+      </div>
+    </div> 
+
+    <!-- assignment 2/3/4 -->
+    <!--  assignment 2 - dynamic component, @ViewChild -->
+    <!--  assignment 3 - custom Pipes -->
+    <!--  assignment 4 - custom attribute directives -->
+    <div class="row  justify-content-center mb-5 ">
+      <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Dynamic Component, @ViewChild
+        </div>
+        <div class="card-body ">
+          <app-live-news [bulletin]="bulletins"></app-live-news>
+        </div>
+      </div>
+</div>
+</div> 
+<div class="row  justify-content-center mb-5 ">
+    <!-- assignment 5 -  template based form,localStorage & validation -->
+    <app-add-customerby-tplfrm></app-add-customerby-tplfrm>
+</div>
+<div class="row  justify-content-center mb-5 ">
+  <!-- assignment 6 -  reactive form,localStorage & validation -->
+  <app-add-customerby-rctfrm></app-add-customerby-rctfrm>
+</div>
+<div class="row  justify-content-center mb-5 ">
+  <!-- assignment 7 -  Http Client POST API, Observable, localStorage -->
+  <app-user-registration></app-user-registration>
+</div>
+
+<div class="row  justify-content-center mb-5 ">
+  <!-- assignment 8/9/10 -  Http Client GET API & Services & Observable -->
+  <div class="col col-sm-6">
+    <app-user-list></app-user-list>
+  </div>
+</div>
+<div class="row  justify-content-center mb-5 ">
+    <!-- assignment 11 -  Miscellaneous angular components -->
+    <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Miscellaneous angular components
+        </div>
+        <div class="card-body ">
+          <app-my-demo-comp></app-my-demo-comp>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row  justify-content-center mb-5 ">
+  <!-- assignment 12 -  basic calculator -->
+  <div class="col col-sm-6">
+    <div class="card">
+      <div class="card-header ">
+        Basic calculator
+      </div>
+      <div class="card-body ">
+        <app-calculator></app-calculator>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+<router-outlet></router-outlet>

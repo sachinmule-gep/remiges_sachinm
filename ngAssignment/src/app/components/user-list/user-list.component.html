@@ -1,0 +1,54 @@
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead> 
+    <tbody>
+        <ng-container *ngFor="let user of userList.data">
+      <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+              <button type="button" title="View User" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal" (click)="viewDetails(user)">👁️</button>
+              <button type="button" title="Edit User" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal"  (click)="editUser(user)">✏️</button>
+              <button type="button" title="Delete User" class="btn btn-outline-secondary" (click)="confirmDelete(user)">🗑️</button>
+            </div>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{modelTitle}} <span class="fs-6" *ngIf="selectedUser">- {{selectedUser.id}} {{selectedUser.first_name}} {{selectedUser.last_name}}</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- view user details component-->
+        <div *ngIf="selectedUser && enumVal===0"> 
+          <app-user-details [user]="selectedUser"></app-user-details>
+        </div>
+        <!-- view user details component-->
+        <div *ngIf="selectedUser && enumVal===1">
+          <app-edit-details [user]="selectedUser" (updateUser)="updateUser($event)" (close)="closeDetails()"></app-edit-details>
+        </div>
+    </div>
+    <div class="modal-footer " *ngIf="selectedUser && enumVal===0 || enumVal===2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+  </div>  
+    </div>
+  </div>
+

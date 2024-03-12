@@ -1,0 +1,32 @@
+<div *ngIf="user" class="text-start">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-3 col-form-label text-end">ID :</label>
+        <div class="col-sm-9">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ user.id }}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-3 col-form-label text-end">First Name :</label>
+        <div class="col-sm-9">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ user.first_name}}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-3 col-form-label text-end">Last Name :</label>
+        <div class="col-sm-9">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ user.last_name }}">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-3 col-form-label text-end">Email :</label>
+        <div class="col-sm-9">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ user.email }}">
+        </div>
+      </div>
+
+    <!-- Add more details if needed -->
+    <!-- <button type="button" class="btn btn-primary" (click)="updateUser()">Update</button>
+    <button type="button" class="btn btn-secondary" (click)="close()">Close</button> -->
+  </div>
+

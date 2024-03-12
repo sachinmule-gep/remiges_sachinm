@@ -1,0 +1,86 @@
+<div class="row g-3">
+
+    <div class="col-6 offset-md-3">
+        <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+            <div class="card">
+                <div class="card-header">
+                    Reactive Form
+                </div>
+                <div class="card-body">
+                    <div class="px-4 py-4 text-start">
+                        <div class="row g-3">
+                            <div class="col-md-6 align-self-center">
+                                <label for="firstName" class="form-label">First Name: </label>
+                                <input id="firstName" type="text" class="form-control" formControlName="firstName">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('firstName')?.hasError('pattern') && customerForm.get('firstName')?.touched">
+                                    First name should not be empty & should not have numbers!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name: </label>
+                                <input id="lastName" type="text" class="form-control" formControlName="lastName">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('lastName')?.hasError('pattern') && customerForm.get('lastName')?.touched">
+                                    Last name should not be empty & should not have numbers!
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email" class="form-label">Email: </label>
+                                <input id="email" type="email" class="form-control" formControlName="email">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('email')?.hasError('invalidEmail') && customerForm.get('email')?.touched">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="dob" class="form-label">DOB: </label>
+                                <input id="dob" type="date" class="form-control" formControlName="dob">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('dob')?.hasError('ageBelow18') && customerForm.get('dob')?.touched">
+                                    User age should be above 18
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="mobile" class="form-label">Mobile: </label>
+                                <input id="mobile" type="tel" class="form-control" formControlName="mobile">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('mobile')?.hasError('pattern') && customerForm.get('mobile')?.touched">
+                                    Mobile number should be 10 digits
+                                </div>
+                            </div>
+
+                            <div class="col-md-10">
+                                <label for="address" class="form-label">Address: </label>
+                                <input id="address" type="text" class="form-control" formControlName="address">
+                            </div>
+
+                            <div class="col-md-2">
+                                <label for="zip" class="form-label">Zip: </label>
+                                <input id="zip" type="text" class="form-control" formControlName="zip">
+                                <div class="errorMsg"
+                                    *ngIf="customerForm.get('zip')?.hasError('pattern') && customerForm.get('zip')?.touched">
+                                    Zip code should be 6 digits
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" [disabled]="!customerForm.valid"
+                        (click)="onSubmit()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- toast message -->
+<div id="successToast" class="toast-container toast align-items-center text-bg-success border-0 translate-middle"  style="position: fixed;top: 40px;right: -100px;" [class.show]="successMessage"
+    role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            User registration successfully.
+        </div>
+</div>
+</div>

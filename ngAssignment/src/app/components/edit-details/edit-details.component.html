@@ -1,0 +1,36 @@
+<div *ngIf="user" class="text-start">
+  <form (submit)="updateUserDetails()">
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-3 col-form-label text-end">ID :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="staticEmail" [(ngModel)]="user.id" name="user.id">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-3 col-form-label text-end">First Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="staticEmail" [(ngModel)]="user.first_name" name="user.first_name">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-3 col-form-label text-end">Last Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="staticEmail" [(ngModel)]="user.last_name" name="user.last_name">
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-3 col-form-label text-end">Email :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="staticEmail" [(ngModel)]="user.email" name="user.email">
+      </div>
+    </div>
+
+    <!-- Add more details if needed -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="updateUserDetails()"
+        data-bs-dismiss="modal">Update</button>
+      <button type="button" class="btn btn-secondary" (click)="closeDetails()" data-bs-dismiss="modal">Close</button>
+    </div>
+  </form>
+</div>

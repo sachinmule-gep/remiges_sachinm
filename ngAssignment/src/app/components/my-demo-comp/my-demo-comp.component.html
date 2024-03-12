@@ -1,0 +1,83 @@
+<div class="container">
+  <button type="button" class="btn btn-primary me-md-2" id="liveAlertBtn"
+    (click)="showAlert('This is Alert Message','success')">Alert Example </button>
+  <button type="button" class="btn btn-primary me-md-2" id="liveToastBtn" (click)="showToast()">Toast</button>
+  <button class="btn btn-primary me-md-2" (click)="showLoader()">Loader</button>
+  <button class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#confimationModal"
+    (click)="showConfirm()">Confirm</button>
+  <button class="btn btn-primary me-md-3" data-bs-toggle="modal" data-bs-target="#inpConfimationModal"
+    (click)="showInputConfirm()">Input Confirm</button>
+</div>
+
+<div id="liveAlertPlaceholder"></div>
+
+<!-- alerte  -->
+<div *ngFor="let alert of alerts; let i = index" class="alert-container mt-3">
+  <div class="alert text-start" [ngClass]="'alert-' + alert.type" role="alert">
+    {{ alert.message }}
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert(i)"></button>
+  </div>
+</div>
+
+<!-- toast  -->
+<div id="toast" class="toast text-bg-info" style="top:20px; right: 20px; position: fixed;" role="alert"
+  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <strong class="me-auto">Toast Header</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body text-start">
+    Hello, world! This is a toast message.
+  </div>
+</div>
+
+<!-- loader -->
+<div class="spinerContainer modal-backdrop fade show hide" id="loader">
+  <div class="spinner-bg">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<!-- confirmation modal -->
+<div class="modal fade" id="confimationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Cofirmation popup</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Confirmation Popup triggered, do you want to continue
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- input confirmation modal -->
+<div class="modal fade" id="inpConfimationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Cofirmation popup</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="inpConfPopup()" id="getInp">
+          Confirmation Popup triggered, do you want to continue
+          <input type="text" class="form-control" placeholder="Enter text" [(ngModel)]="inpText" name="inpText">
+        </form>
+        <div id="showInpText" style="display: none;">{{inpText}}</div>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="clickedBtn" (click)="inpConfPopup()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

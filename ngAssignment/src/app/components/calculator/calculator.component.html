@@ -1,0 +1,27 @@
+<p>calculator works!</p>
+<div class="calculatorContainer">
+    <div class="calculator">
+        <div class="calcDisplay">
+          <input type="text" id="result" readonly [value]="results">
+        </div>
+        <div class="calcButtonsContainer">
+          <button class="calcButtons" (click)="clearResult()">C</button>
+          <button class="calcButtons" (click)="appendCharacter('/')">/</button>
+          <button class="calcButtons" (click)="appendCharacter('*')">*</button>
+          <button class="calcButtons" (click)="appendCharacter('7')">7</button>
+          <button class="calcButtons" (click)="appendCharacter('8')">8</button>
+          <button class="calcButtons" (click)="appendCharacter('9')">9</button>
+          <button class="calcButtons" (click)="appendCharacter('-')">-</button>
+          <button class="calcButtons" (click)="appendCharacter('4')">4</button>
+          <button class="calcButtons" (click)="appendCharacter('5')">5</button>
+          <button class="calcButtons" (click)="appendCharacter('6')">6</button>
+          <button class="calcButtons" (click)="appendCharacter('+')">+</button>
+          <button class="calcButtons" (click)="appendCharacter('1')">1</button>
+          <button class="calcButtons" (click)="appendCharacter('2')">2</button>
+          <button class="calcButtons" (click)="appendCharacter('3')">3</button>
+          <button class="calcButtons" (click)="calculateResult()">=</button>
+          <button class="calcButtons" (click)="appendCharacter('0')">0</button>
+          <button class="calcButtons" (click)="appendCharacter('.')">.</button>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,90 @@
+<form class="row g-3  needs-validation" novalidate #add_customer="ngForm" (ngSubmit)="ngSubmit(add_customer)">
+    <div class="col-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                Template Based Form
+            </div>
+            <div class="px-4 py-4 text-start">
+                <div class="row g-3">
+                    <div class="col-md-6 align-self-center">
+                        <label for="inputFname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="inputFname" name="inputFname" ngModel required
+                            pattern="^[a-zA-Z]+$">
+                        <div class="invalid-feedback">
+                            First name should not be empty & should not have numbers!
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputLname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="inputLname" name="inputLname" ngModel
+                            pattern="^^[a-zA-Z]+$">
+                        <div class="invalid-feedback">
+                            Last name should not be empty & should not have numbers!
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 align-self-center">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" ngModel required
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                        <!-- <div  [ngClass]="{'invalid-feedback': add_customer.controls['email']?.hasError('pattern') && add_customer.controls['email']?.touched}" > -->
+                        <div class="errorMsg invalid-feedback"
+                            [class.d-block]="add_customer.controls['email']?.hasError('pattern')"
+                            *ngIf="add_customer.controls['email']?.hasError('pattern') && add_customer.controls['email'].touched">
+                            Please enter a valid email address.
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 align-self-center">
+                        <label for="inputDOB" class="form-label">DOB - {{isAbove18}}</label>
+                        <input type="date" class="form-control" id="inputDOB" name="inputDOB" ngModel
+                            (change)="isAgeAbove18(add_customer.value['inputDOB'])" [class.is-invalid]="!isAbove18"
+                            pattern="^(?:19|20)\d\d-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$">
+                        <div class="invalid-feedback" [ngClass]="isAbove18 ? 'd-none' : 'd-block '" *ngIf="!isAbove18">
+                            User age should be above 18
+                        </div>
+                    </div>
+                    <div class="col-md-12 align-self-center">
+                        <label for="inputMNo" class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-control" id="inputMNo" name="inputMNo" ngModel pattern="^\d{10}$">
+                        <div class="invalid-feedback">
+                            Mobile number should be 10 digits
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
+                            name="inputAddress" ngModel>
+
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip" name="inputZip" ngModel required
+                            pattern="^\d{6}$">
+                        <div class="invalid-feedback">
+                            Zip code should be 6 digits
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary" [disabled]="!add_customer.form.valid"
+                    (click)="ngSubmit(add_customer)">Submit</button>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+<!-- toast message -->
+<div id="successToast" class="toast-container toast align-items-center text-bg-success border-0 translate-middle"  style="position: fixed;top: 40px;right: -100px;" [class.show]="successMessage"
+    role="alert" aria-live="assertive" aria-atomic="true">    
+    <div class="d-flex">
+        <div class="toast-body">
+            form has been saved successfully.
+        </div>
+    </div>
+</div>
