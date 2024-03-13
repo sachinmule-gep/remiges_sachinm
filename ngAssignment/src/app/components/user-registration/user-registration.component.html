@@ -23,7 +23,8 @@
                                 <input id="password" type="password" class="form-control" formControlName="password">
                                 <div class="errorMsg"
                                     *ngIf="userRegistration.get('password')?.hasError('invalidPwd') && userRegistration.get('password')?.touched">
-                                    Password must at least 8 characters, at least one uppercase letter, one lowercase letter, one digit, and one special character
+                                    Password must at least 8 characters, at least one uppercase letter, one lowercase
+                                    letter, one digit, and one special character
                                 </div>
                             </div>
                         </div>
@@ -38,11 +39,12 @@
     </div>
 </div>
 <!-- toast message -->
-<div id="successToast" class="toast-container toast align-items-center text-bg-secondary border-0 translate-middle"  style="position: fixed;top: 40px;right: -100px;" [class.show]="showToast"
-    role="alert" aria-live="assertive" aria-atomic="true">
+<div id="successToast" class="toast-container toast align-items-center text-bg-secondary border-0 translate-middle"
+    style="position: fixed;top: 40px;right: -100px;" [class.show]="showToast" role="alert" aria-live="assertive"
+    aria-atomic="true">
     <div class="d-flex">
         <div class="toast-body">
             {{ toastMessage }}
         </div>
-</div>
+    </div>
 </div>

@@ -8,25 +8,21 @@ import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddCustomerbyTplfrmComponent implements OnInit {
   successMessage: boolean = false;
-  add_customer : FormGroup;
-  isAbove18: boolean = true
+  add_customer: FormGroup;
+  isAbove18: boolean = true;
   //isDisable:boolean = true
-  
+
   constructor(private fb: FormBuilder) {
     this.add_customer = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
     });
   }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
   // form - submit
   ngSubmit(add_customer: NgForm) {
-    
     this.isAbove18 = this.isAgeAbove18(add_customer.value['inputDOB']);
-    
 
     console.log(add_customer.value);
     this.formValidation();
@@ -35,7 +31,6 @@ export class AddCustomerbyTplfrmComponent implements OnInit {
       this.saveCustInfo(add_customer);
       this.showToast();
       const customerDetails = {};
-      
     } else {
       this.successMessage = false;
     }
@@ -78,8 +73,8 @@ export class AddCustomerbyTplfrmComponent implements OnInit {
   }
 
   // form - validation check whether date is above 18 or not
-  
-  isAgeAbove18(inpDate:Date){
+
+  isAgeAbove18(inpDate: Date) {
     const birthDate = new Date(inpDate);
     const currentDate = new Date();
 
@@ -87,12 +82,12 @@ export class AddCustomerbyTplfrmComponent implements OnInit {
     const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
     const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
 
-    console.log('entered birth date :',birthDate, ageInYears > 18)
-    return  ageInYears > 18;
-  };
+    console.log('entered birth date :', birthDate, ageInYears > 18);
+    return ageInYears > 18;
+  }
 
-//  You can use this method to check if the email is valid
+  //  You can use this method to check if the email is valid
   // isEmailValid(): boolean {
-  //   return this.add_customer.get('email').valid ; 
+  //   return this.add_customer.get('email').valid ;
   // }
 }

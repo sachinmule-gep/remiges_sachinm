@@ -1,35 +1,34 @@
 <div class="news-details " *ngIf="currentBulletin">
-    <div class="row g-3 align-items-center">
-      <div class="col-auto">
-        <label for="inputPassword6" class="col-form-label">News Title :</label>
-      </div>
-      <div class="col-12 mt-0" highlight-title >
-        <div id="passwordHelpInline" class="form-text text-start" title="{{currentBulletin?.news_title}}">
-          {{currentBulletin?.news_title | wraptext:20 }}
-        </div>
-      </div>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">News Title :</label>
     </div>
-  
-    <div class="row g-3 align-items-center">
-      <div class="col-auto">
-        <label for="news_date" class="col-form-label">News Date :</label>
-      </div>
-      <div class="col-auto">
-        <span id="news_date" class="form-text">
-          {{currentBulletin?.news_date | formatDate:'short-date' }}
-        </span>
-      </div>
-    </div>
-
-    <div class="row g-3 align-items-center">
-      <div class="col-auto">
-        <label for="news_time" class="col-form-label">News Date :</label>
-      </div>
-      <div class="col-auto">
-        <span id="news_time" class="form-text">
-          {{currentBulletin?.news_date | formatDate:'short-time' }}
-        </span>
+    <div class="col-12 mt-0" highlight-title>
+      <div id="passwordHelpInline" class="form-text text-start" title="{{currentBulletin?.news_title}}">
+        {{currentBulletin?.news_title | wraptext:20 }}
       </div>
     </div>
   </div>
-  
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="news_date" class="col-form-label">News Date :</label>
+    </div>
+    <div class="col-auto">
+      <span id="news_date" class="form-text">
+        {{currentBulletin?.news_date | formatDate:'short-date' }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="news_time" class="col-form-label">News Date :</label>
+    </div>
+    <div class="col-auto">
+      <span id="news_time" class="form-text">
+        {{currentBulletin?.news_date | formatDate:'short-time' }}
+      </span>
+    </div>
+  </div>
+</div>

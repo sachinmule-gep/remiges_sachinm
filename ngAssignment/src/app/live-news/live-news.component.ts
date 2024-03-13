@@ -8,26 +8,23 @@ export interface Bulletin {
 @Component({
   selector: 'app-live-news',
   templateUrl: './live-news.component.html',
-  styleUrls: ['./live-news.component.sass']
+  styleUrls: ['./live-news.component.sass'],
 })
 export class LiveNewsComponent implements OnInit {
+  @Input() bulletin: Bulletin[] = []; // input declaration
+  currentBulletin!: Bulletin;
 
-  @Input() bulletin : Bulletin[]=[]; // input declaration
-  currentBulletin !: Bulletin ;
-  
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.bulletinCycle();
   }
 
-  bulletinCycle(){
-    let index=0;
-    setInterval(()=>{
+  bulletinCycle() {
+    let index = 0;
+    setInterval(() => {
       this.currentBulletin = this.bulletin[index];
       index = (index + 1) % this.bulletin.length;
-    },5000);
+    }, 5000);
   }
-
 }
