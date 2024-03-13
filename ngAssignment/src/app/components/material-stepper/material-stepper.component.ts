@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-material-stepper',
   templateUrl: './material-stepper.component.html',
-  styleUrls: ['./material-stepper.component.sass']
+  styleUrls: ['./material-stepper.component.sass'],
 })
 export class MaterialStepperComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   isEditable = false;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -21,5 +21,4 @@ export class MaterialStepperComponent implements OnInit {
       secondCtrl: ['', Validators.required],
     });
   }
-
 }

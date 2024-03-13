@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
@@ -21,8 +21,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
-
-
 
 // routing modules
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -42,7 +40,10 @@ import { MyDemoCompComponent } from './components/my-demo-comp/my-demo-comp.comp
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { MaterialStepperComponent } from './components/material-stepper/material-stepper.component';
 import { MaterialDateComponent } from './components/material-date/material-date.component';
-import { MaterialDialogComponent, DialogContentExampleDialog } from './components/material-dialog/material-dialog.component';
+import {
+  MaterialDialogComponent,
+  DialogContentExampleDialog,
+} from './components/material-dialog/material-dialog.component';
 import { MaterialSortTableComponent } from './components/material-sort-table/material-sort-table.component';
 import { MaterialChipsComponent } from './components/material-chips/material-chips.component';
 import { MaterialSidenavComponent } from './components/material-sidenav/material-sidenav.component';
@@ -50,12 +51,11 @@ import { MaterialTableComponent } from './components/material-table/material-tab
 import { MaterialTableDynamicComponent } from './components/material-table-dynamic/material-table-dynamic.component';
 import { MaterialTableExpandableComponent } from './components/material-table-expandable/material-table-expandable.component';
 
-
 // services
 import { BulletinService } from './services/bulletin-service.service';
 import { RegistrationService } from './services/registration.service';
-import { UsersService } from './services/users.service';  
-import { TokenInterceptorService } from './services/token-interceptor.service'
+import { UsersService } from './services/users.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AlertService } from './services/alerts.service';
 
 // pipes
@@ -64,8 +64,10 @@ import { FormatDatePipe } from './pipes/format-date.pipe';
 
 // directives
 import { HighlightTitleDirective } from './directives/highlight-title.directive';
-
-
+import { AutocompleteBasicComponent } from './components/autocomplete-basic/autocomplete-basic.component';
+import { AutocompleteSelectedValueComponent } from './components/autocomplete-selected-value/autocomplete-selected-value.component';
+import { AutocompleteGroupComponent } from './components/autocomplete-group/autocomplete-group.component';
+import { AutocompleteImageOptionsComponent } from './components/autocomplete-image-options/autocomplete-image-options.component';
 
 @NgModule({
   declarations: [
@@ -92,12 +94,16 @@ import { HighlightTitleDirective } from './directives/highlight-title.directive'
     MaterialSidenavComponent,
     MaterialTableComponent,
     MaterialTableDynamicComponent,
-    MaterialTableExpandableComponent 
+    MaterialTableExpandableComponent,
+    AutocompleteBasicComponent,
+    AutocompleteSelectedValueComponent,
+    AutocompleteGroupComponent,
+    AutocompleteImageOptionsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -118,15 +124,19 @@ import { HighlightTitleDirective } from './directives/highlight-title.directive'
     MatNativeDateModule,
     MatButtonModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
   ],
-  providers: [BulletinService, RegistrationService, UsersService, AlertService,
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }
+  providers: [
+    BulletinService,
+    RegistrationService,
+    UsersService,
+    AlertService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

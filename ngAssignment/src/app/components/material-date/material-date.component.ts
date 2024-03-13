@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-material-date',
   templateUrl: './material-date.component.html',
-  styleUrls: ['./material-date.component.sass']
+  styleUrls: ['./material-date.component.sass'],
 })
 export class MaterialDateComponent implements OnInit {
   campaignOne: FormGroup;
@@ -24,14 +24,11 @@ export class MaterialDateComponent implements OnInit {
       start: new FormControl(new Date(year, month, 15)),
       end: new FormControl(new Date(year, month, 19)),
     });
-    
-   }
-
-  ngOnInit(): void {
   }
+
+  ngOnInit(): void {}
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),
   });
-
 }

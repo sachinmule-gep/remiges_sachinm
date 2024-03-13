@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class AlertService {
-
   private alertSubject = new Subject<AlertMessage>();
 
   getAlerts() {
@@ -24,5 +21,3 @@ export interface AlertMessage {
 }
 
 export type AlertType = 'success' | 'info' | 'warning' | 'danger';
-
-

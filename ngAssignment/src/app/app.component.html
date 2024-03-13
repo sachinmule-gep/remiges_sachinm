@@ -1,59 +1,58 @@
-  
-  <div class="container text-center">
-    <div class="row  justify-content-center mb-5 ">
-      <!-- assignment 1 - change detection triigger for default/onpush strategy -->
-      <div class="col col-sm-6">
-            <div class="card">
-              <div class="card-header ">
-                  Change Detection - {{cdrStrategy}}
-              </div>
-              <div class="card-body ">
-                <app-change-detect [bulletin]="currentBulletin"></app-change-detect>
-              </div>
-              <div class="card-footer">
-                  <button (click)="changeDetectionDefault()" type="button" class="btn btn-primary mx-4">Update Default</button>
-                  <button (click)="changeDetectionOnPush()" type="button" class="btn btn-primary">Update Onpush</button>
-              </div>
-            </div>
+<div class="container text-center">
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 1 - change detection triigger for default/onpush strategy -->
+    <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Change Detection - {{cdrStrategy}}
+        </div>
+        <div class="card-body ">
+          <app-change-detect [bulletin]="currentBulletin"></app-change-detect>
+        </div>
+        <div class="card-footer">
+          <button (click)="changeDetectionDefault()" type="button" class="btn btn-primary mx-4">Update Default</button>
+          <button (click)="changeDetectionOnPush()" type="button" class="btn btn-primary">Update Onpush</button>
+        </div>
       </div>
-    </div> 
+    </div>
+  </div>
 
-    <!-- assignment 2/3/4 -->
-    <!--  assignment 2 - dynamic component, @ViewChild -->
-    <!--  assignment 3 - custom Pipes -->
-    <!--  assignment 4 - custom attribute directives -->
-    <div class="row  justify-content-center mb-5 ">
-      <div class="col col-sm-6">
+  <!-- assignment 2/3/4 -->
+  <!--  assignment 2 - dynamic component, @ViewChild -->
+  <!--  assignment 3 - custom Pipes -->
+  <!--  assignment 4 - custom attribute directives -->
+  <div class="row  justify-content-center mb-5 ">
+    <div class="col col-sm-6">
       <div class="card">
         <div class="card-header ">
           Dynamic Component, @ViewChild
         </div>
-        <div class="card-body ">
+        <div class="card-body min-h-160">
           <app-live-news [bulletin]="bulletins"></app-live-news>
         </div>
       </div>
-</div>
-</div> 
-<div class="row  justify-content-center mb-5 ">
+    </div>
+  </div>
+  <div class="row  justify-content-center mb-5 ">
     <!-- assignment 5 -  template based form,localStorage & validation -->
     <app-add-customerby-tplfrm></app-add-customerby-tplfrm>
-</div>
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 6 -  reactive form,localStorage & validation -->
-  <app-add-customerby-rctfrm></app-add-customerby-rctfrm>
-</div>
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 7 -  Http Client POST API, Observable, localStorage -->
-  <app-user-registration></app-user-registration>
-</div>
-
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 8/9/10 -  Http Client GET API & Services & Observable -->
-  <div class="col col-sm-6">
-    <app-user-list></app-user-list>
   </div>
-</div>
-<div class="row  justify-content-center mb-5 ">
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 6 -  reactive form,localStorage & validation -->
+    <app-add-customerby-rctfrm></app-add-customerby-rctfrm>
+  </div>
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 7 -  Http Client POST API, Observable, localStorage -->
+    <app-user-registration></app-user-registration>
+  </div>
+
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 8/9/10 -  Http Client GET API & Services & Observable -->
+    <div class="col col-sm-6">
+      <app-user-list></app-user-list>
+    </div>
+  </div>
+  <div class="row  justify-content-center mb-5 ">
     <!-- assignment 11 -  Miscellaneous angular components -->
     <div class="col col-sm-6">
       <div class="card">
@@ -65,103 +64,129 @@
         </div>
       </div>
     </div>
-</div>
-
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 12 -  basic calculator -->
-  <div class="col col-sm-6">
-    <div class="card">
-      <div class="card-header ">
-        Basic calculator
-      </div>
-      <div class="card-body ">
-        <app-calculator></app-calculator>
-      </div>
-    </div>
   </div>
-</div>
 
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 13 -  angular material components -->
-  <div class="col col-sm-6">
-    <div class="card">
-      <div class="card-header ">
-        Angular Material Components
-      </div>
-      <!-- stepper component -->
-      <div class="card-body text-start">
-        <h3 class="h3">Stepper Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-stepper></app-material-stepper>
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 12 -  basic calculator -->
+    <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Basic calculator
         </div>
-
-        <!-- date range component -->
-        <h3 class="h3">Date Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-date></app-material-date>
-        </div>
-
-        <!-- dialog component -->
-        <h3 class="h3">Dialog Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-dialog></app-material-dialog>
-        </div>
-
-        <!-- sorting table component -->
-        <h3 class="h3">Sorting Table Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-sort-table></app-material-sort-table>
-        </div>
-
-        <!-- chips component -->
-        <h3 class="h3">Chips Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-chips></app-material-chips>
-        </div>
-
-        <!-- Sidenav component -->
-        <h3 class="h3">Sidenav Component</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-sidenav></app-material-sidenav>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row  justify-content-center mb-5 ">
-  <!-- assignment 14 -  angular material table option -->
-  <div class="col col-sm-6">
-    <div class="card">
-      <div class="card-header ">
-        Angular Material Table Component
-      </div>
-      <div class="card-body text-start">
-        <h3 class="h3">Basic table with Styling and footer row</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-table></app-material-table>
-        </div>
-
-        <h3 class="h3">Dynamically Table - Add,Remove and Shuffle Actions</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-table-dynamic></app-material-table-dynamic>
-        </div>
-
-        <h3 class="h3">Expandable Table With Filter</h3>
-        <div class="border p-3 bg-light-subtle mb-5">
-          <app-material-table-expandable></app-material-table-expandable>
+        <div class="card-body ">
+          <app-calculator></app-calculator>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 13 -  angular material components -->
+    <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Angular Material Components
+        </div>
+        <!-- stepper component -->
+        <div class="card-body text-start">
+          <h3 class="h3">Stepper Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-stepper></app-material-stepper>
+          </div>
+
+          <!-- date range component -->
+          <h3 class="h3">Date Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-date></app-material-date>
+          </div>
+
+          <!-- dialog component -->
+          <h3 class="h3">Dialog Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-dialog></app-material-dialog>
+          </div>
+
+          <!-- sorting table component -->
+          <h3 class="h3">Sorting Table Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-sort-table></app-material-sort-table>
+          </div>
+
+          <!-- chips component -->
+          <h3 class="h3">Chips Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-chips></app-material-chips>
+          </div>
+
+          <!-- Sidenav component -->
+          <h3 class="h3">Sidenav Component</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-sidenav></app-material-sidenav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row  justify-content-center mb-5 ">
+    <!-- assignment 14 -  angular material table option -->
+    <div class="col col-sm-6">
+      <div class="card">
+        <div class="card-header ">
+          Angular Material Table Component
+        </div>
+        <div class="card-body text-start">
+          <h3 class="h3">Basic table with Styling and footer row</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-table></app-material-table>
+          </div>
+
+          <h3 class="h3">Dynamically Table - Add,Remove and Shuffle Actions</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-material-table-dynamic></app-material-table-dynamic>
+          </div>
+
+          <h3 class="h3">Expandable Table With Filter</h3>
+          <div class="border p-3 bg-light-subtle">
+            <app-material-table-expandable></app-material-table-expandable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row  justify-content-center ">
+    <!-- assignment 15 -  angular material autocomplete option -->
+    <div class="col col-sm-6 mb-5 ">
+      <div class="card">
+        <div class="card-header ">
+          Angular Material Autocomplete Component
+        </div>
+        <div class="card-body text-start">
+          <h3 class="h3">Autocomplete - Basic</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-autocomplete-basic></app-autocomplete-basic>
+          </div>
+
+          <h3 class="h3">Autocomplete - Highlighted First Option</h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-autocomplete-selected-value></app-autocomplete-selected-value>
+          </div>
+
+          <h3 class="h3">Autocomplete - Option Group </h3>
+          <div class="border p-3 bg-light-subtle mb-5">
+            <app-autocomplete-group></app-autocomplete-group>
+          </div>
+
+          <h3 class="h3">Autocomplete - List With Images </h3>
+          <div class="border p-3 bg-light-subtle">
+            <app-autocomplete-image-options></app-autocomplete-image-options>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-
-
-</div>
-
-
-
-
 <router-outlet></router-outlet>
